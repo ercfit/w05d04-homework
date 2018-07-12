@@ -1,0 +1,22 @@
+{
+  "name": "w05d04-homework",
+  "version": "1.0.0",
+  "description": "For this **2 day** homework assignment, you will be using some  mongoose commands and you will be **reading documentation**  to find **new** queries/techniques to complete the following activities. Researching queries and implementing them is a big part of this homework!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ercfit/w05d04-homework.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ercfit/w05d04-homework/issues"
+  },
+  "homepage": "https://github.com/ercfit/w05d04-homework#readme",
+  "dependencies": {
+    "mongoose": "^5.2.3"
+  }
+}
