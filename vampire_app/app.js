@@ -170,12 +170,27 @@ app.on("connected", () => {
 // 	console.log(moods);
 // });
 //4 
-Vampire.find({$and:[{loves:{$nin:["top hats", "virgin blood"]}},{loves:"fancy cloaks"}]}, (err, quirks) => {
-	console.log(quirks);
-});
+// Vampire.find({$and:[{loves:{$nin:["top hats", "virgin blood"]}},{loves:"fancy cloaks"}]}, (err, quirks) => {
+// 	console.log(quirks);
+// });
 /////////////////////////////////////////////////
 //### Negative Selection
-
+//1
+// Vampire.find({$and:[{eye_color:{$nin:["brown eyes"]}},{loves:"ribbons"}]}, (err, x) => {
+// 	console.log(x);
+// })
+//2
+// Vampire.find({location:{$nin:"Rome"}}, (err, x) =>{
+// 	console.log(x);
+// })
+//3
+// Vampire.find({love:{$nin:["fancy cloaks, frilly shirtsleeves, appearing innocent, being tragic, brooding"]}}, (err, quirks) => {
+// 	console.log(quirks);
+// });
+//4
+Vampire.find({victims:{$lte:200}}, (err, theDevoured) => {
+	console.log(theDevoured);
+});
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REPLACE
