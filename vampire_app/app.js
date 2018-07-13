@@ -152,12 +152,27 @@ app.on("connected", () => {
 // 	console.log(smores);
 // });
 //4
-Vampire.find({$or:[{hair_color:"red"}, {eye_color:"green"}]}, (err, hairyEyes) => {
-	console.log(hairyEyes);
-})
+// Vampire.find({$or:[{hair_color:"red"}, {eye_color:"green"}]}, (err, hairyEyes) => {
+// 	console.log(hairyEyes);
+//})
 /////////////////////////////////////////////////
 //### Select objects that match one of several values
-
+//1
+// Vampire.find({$or:[{loves: "frilly shirtsleeves"}, {loves:"frilly collars"}]}, (err, clothesHorse) => {
+// 	console.log(clothesHorse);
+// });	
+//2
+// Vampire.find({loves:"brooding"}, (err, emo) => {
+// 	console.log(emo);
+// });
+//3
+// Vampire.find({$or:[{loves:"appearing innocent"}, {loves:"trickery"}, {loves: "lurking in rotting mansions"}]}, (err, moods) =>{
+// 	console.log(moods);
+// });
+//4 
+Vampire.find({$and:[{loves:{$nin:["top hats", "virgin blood"]}},{loves:"fancy cloaks"}]}, (err, quirks) => {
+	console.log(quirks);
+});
 /////////////////////////////////////////////////
 //### Negative Selection
 
