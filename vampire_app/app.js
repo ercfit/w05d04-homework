@@ -7,7 +7,24 @@
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // INSERT USING MONGOOSE
-// ### Add the vampire data that we gave you
+const mongoose = require ("mongoose");
+const app = mongoose.connection;
+const Vampire = require("./models/vampires");//schema
+const Popvamp = require("./models/populateVampires");//vampire data
+
+mongoose.connect("mongodb://localhost:27017/vampire");
+app.on("error", (err) => {
+	console.log(err, "ERROR message");
+})
+
+app.on("connected", () => {
+	console.log("MONGOOSE connected!");
+})
+
+Vampire.collection.insertMany(Popvamp, (err, data) => {
+	console.log("added vampire stats");
+	mongoose.connection.close();
+})
 
 // ### Add some new vampire data
 
