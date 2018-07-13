@@ -96,6 +96,8 @@ app.on("connected", () => {
 // });	
 /////////////////////////////////////////////////
 // ## QUERYING
+/////////////////////////////////////////////////
+// ### Select by comparison
 //1
 // Vampire.find({gender: "f"}, (err, ladies) => {
 // 		console.log(ladies);
@@ -113,16 +115,28 @@ app.on("connected", () => {
 // 	console.log(theDevoured);
 // });
 //5
-Vampire.find({$and: [{victims:{$gt:150}}, {victims:{$lt: 500}}]}, (err, theDevoured) => {
-	console.log(theDevoured);
-});
-
-/////////////////////////////////////////////////
-// ### Select by comparison
+// Vampire.find({$and: [{victims:{$gt:150}}, {victims:{$lt: 500}}]}, (err, theDevoured) => {
+// 	console.log(theDevoured);
+// });
 
 /////////////////////////////////////////////////
 // ### Select by exists or does not exist
-
+//1
+// Vampire.find({title:{$exists:true}}, (err, titleExists) => {
+// 	console.log(titleExists);
+// });
+//2
+// Vampire.find({victims:{$exists:false}}, (err, omnivores) => {
+// 	console.log(omnivores);
+// });	
+//3
+// Vampire.find({$and:[{victims:{$exists:false}}, {title:{$exists:true}}]}, (err, info) => {
+// 	console.log(info);
+// });
+//4
+Vampire.find({$and:[{victims:{$exists:true}}, {victims:{$gt:100}}]}, (err, theDevoured) => {
+	console.log(theDevoured);
+});
 /////////////////////////////////////////////////
 // ### Select with OR
 
