@@ -134,12 +134,27 @@ app.on("connected", () => {
 // 	console.log(info);
 // });
 //4
-Vampire.find({$and:[{victims:{$exists:true}}, {victims:{$gt:100}}]}, (err, theDevoured) => {
-	console.log(theDevoured);
-});
+// Vampire.find({$and:[{victims:{$exists:true}}, {victims:{$gt:100}}]}, (err, theDevoured) => {
+// 	console.log(theDevoured);
+// });
 /////////////////////////////////////////////////
 // ### Select with OR
-
+//1
+// Vampire.find({$or:[{location:"New York, New York, US"}, {location:"New Orleans, Louisiana, US"}]}, (err, cities) =>{
+// 	console.log(cities);
+// })
+//2
+// Vampire.find({$or:[{loves: "brooding"}, {loves: "being tragic"}]}, (err, moods) => {
+// 	console.log(moods);
+// });
+//3
+// Vampire.find({$or:[{victims:{$gt:1000}}, {loves: "marshmallows"}]}, (err, smores) => {
+// 	console.log(smores);
+// });
+//4
+Vampire.find({$or:[{hair_color:"red"}, {eye_color:"green"}]}, (err, hairyEyes) => {
+	console.log(hairyEyes);
+})
 /////////////////////////////////////////////////
 //### Select objects that match one of several values
 
