@@ -188,13 +188,27 @@ app.on("connected", () => {
 // 	console.log(quirks);
 // });
 //4
-Vampire.find({victims:{$lte:200}}, (err, theDevoured) => {
-	console.log(theDevoured);
-});
+// Vampire.find({victims:{$lte:200}}, (err, theDevoured) => {
+// 	console.log(theDevoured);
+// });
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REPLACE
-
+//1
+// Vampire.findOneAndUpdate(
+//   {name: "Claudia"}, // search criteria of what to update
+//   {$set: { name: "Eve"}}, // how to update it
+//   {new : true}, // tells findOneAndUpdate to return modified article, not the original
+//   (err, nameChange)=>{
+//     console.log(nameChange);
+//   });
+//2
+Vampire.updateOne(
+  {gender: "m"},
+  {$set: {"is_actually": "were-lizard", name: "Guy Man"}},
+  {new: true}, (err, changes) => {
+    console.log(changes);
+  });
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## UPDATE
