@@ -250,14 +250,20 @@ app.on("connected", () => {
 // 	console.log(y);
 // });
 //6
-Vampire.updateMany({gender: "f"}, {$set:{gender:"fems"}}, (err, x) => {
-	console.log(x);
-});
-
+// Vampire.updateMany({gender: "f"}, {$set:{gender:"fems"}}, (err, x) => {
+// 	console.log(x);
+// });
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REMOVE
-
+//1
+// Vampire.findOneAndRemove({name: "Guy Man"}, (err, hairy)=>{
+//   console.log(hairy);
+// });
+//2
+Vampire.deleteMany({eye_color: "blue"}, (err, colorBlind) => {
+	console.log(colorBlind);
+})
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 
