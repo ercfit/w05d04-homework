@@ -9,7 +9,9 @@ const vampireSchema = new Schema({
 	loves:[String],
 	location: {type: String},
 	gender: {type: String},
-	victims: {type: Number, min: 0}
+	victims: {type: Number, min: 0},
+	is_actually: {type: String},
+	hates:[String]
 })
 
 

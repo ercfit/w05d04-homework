@@ -203,15 +203,56 @@ app.on("connected", () => {
 //     console.log(nameChange);
 //   });
 //2
-Vampire.updateOne(
-  {gender: "m"},
-  {$set: {"is_actually": "were-lizard", name: "Guy Man"}},
-  {new: true}, (err, changes) => {
-    console.log(changes);
-  });
+ // Vampire.findOneAndUpdate(
+ //  {name: "Guy Man"}, 
+ //  {$set: {is_actually: ["were-lizard"]}}, 
+ //  {new : true}, 
+ //  (err, creeper)=>{
+ //    console.log(creeper);
+ //  });
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## UPDATE
+//1
+// Vampire.findOneAndUpdate(
+//   { name: "Guy Man" },
+//   { $set: {gender: "f"} }, 
+//   { new : true },
+//   (err, genderX)=>{
+//     console.log(genderX);
+// });
+//2
+// Vampire.findOneAndUpdate(
+//   {name: "Eve"}, 
+//   {$set: {gender: "m"}}, 
+//   {new : true}, 
+//   (err, genderX)=>{
+//     console.log(genderX);
+//   });
+//3
+// Vampire.findOneAndUpdate(
+//   {name: "Guy Man"}, 
+//   {$set: {hates: ["clothes", "jobs"]}}, 
+//   {new : true}, 
+//   (err, hater)=>{
+//     console.log(hater);
+//   });
+//4
+// Vampire.update(
+//   {name: "Guy Man"}, 
+//   {$push: {hates: {$each: ["alarm clocks", "jackalopes"]}}}, 
+//   {new : true}, 
+//   (err, hater)=>{
+//     console.log(hater);
+//   });
+//5
+// Vampire.update({name: "Eve"}, {$rename:{"name": "moniker"}}, (err, y) => {
+// 	console.log(y);
+// });
+//6
+Vampire.updateMany({gender: "f"}, {$set:{gender:"fems"}}, (err, x) => {
+	console.log(x);
+});
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
